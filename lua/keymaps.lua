@@ -51,4 +51,29 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- PERF:
+-- =============================
+-- My Custom Keymaps
+-- =============================
+
+-- Moves highlighted lines veritcally with capital J/K
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Keeps cursor centered on crtl-u or crtl-d
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- Keeps cursor centered on next/prev searches
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- When you paste over something the buffer retains what you originally copied. <leader>p
+vim.keymap.set('x', '<leader>p', '"_dP')
+
+-- Starts to global replace whatever word cursor is on. <leader>sa
+vim.keymap.set('n', '<leader>sa', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = '[S]ubstitute [A]ll of this word globally' })
+
+-- Open netrw file explorer (The default for vim)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 -- vim: ts=2 sts=2 sw=2 et
