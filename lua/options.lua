@@ -87,8 +87,8 @@ vim.opt.guicursor = '' -- Fat insert cursor
 
 vim.opt.wrap = false -- Disable line wrapping
 
-vim.o.cursorline = true -- Show which line your cursor is on
+vim.o.cursorline = false -- Show which line your cursor is on
 
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '80'
 
 -- vim: ts=2 sts=2 sw=2 et
