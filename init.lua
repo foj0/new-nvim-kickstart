@@ -108,5 +108,7 @@ require 'lazy-plugins'
 -- Set default colorscheme on load
 ColorMyPencils 'rose-pine-moon'
 
+-- NOTE: Look at tjdevries neovim config on his github for some more ideas.
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
