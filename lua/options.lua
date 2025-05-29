@@ -85,12 +85,14 @@ vim.opt.incsearch = true -- Incremental searching
 
 vim.opt.guicursor = '' -- Fat insert cursor
 
-vim.opt.wrap = true -- Disable line wrapping
+vim.opt.wrap = false -- Disable line wrapping
 
 vim.o.cursorline = false -- Show which line your cursor is on
 
 vim.g.have_nerd_font = true -- use terminal nerd font and devicons
 
--- vim.opt.colorcolumn = '80'
+vim.opt.conceallevel = 1 -- added this for obsidian.nvim formatting concealment features
+
+vim.opt.colorcolumn = '80'
 
 -- vim: ts=2 sts=2 sw=2 et

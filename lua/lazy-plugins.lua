@@ -54,6 +54,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line', -- This adds lines indicating indentations. Makes it clear to see nested loops and such.
 
   { import = 'custom.plugins' },
+  -- https://github.com/TiagoMDG/react-comp-gen.nvim?tab=readme-ov-file -- Interesting component generator for react
 
   -- NOTE: The import above automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
