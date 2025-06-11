@@ -55,6 +55,7 @@ require('lazy').setup({
 
   { import = 'custom.plugins' },
   -- https://github.com/TiagoMDG/react-comp-gen.nvim?tab=readme-ov-file -- Interesting component generator for react
+  -- https://github.com/GustavEikaas/easy-dotnet.nvim -- useful if i decide to try some .net development
 
   -- NOTE: The import above automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

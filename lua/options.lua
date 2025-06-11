@@ -51,8 +51,10 @@ vim.o.splitbelow = true
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
-vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- I think this has to be on for indent_line.lua to work
+-- vim.o.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -85,6 +87,13 @@ vim.opt.incsearch = true -- Incremental searching
 
 vim.opt.guicursor = '' -- Fat insert cursor
 
+-- Make cursor change color on insert mode
+-- vim.api.nvim_set_hl(0, 'InsertCursor', { bg = '#ffaa00', fg = '#ffffff' })
+-- vim.opt.guicursor = {
+--   'n-v:block-Cursor', -- Normal/visual mode: block cursor with default styling
+--   'i:block-InsertCursor', -- Insert mode: block cursor with custom yellow-orange color
+-- }
+
 vim.opt.wrap = false -- Disable line wrapping
 
 vim.o.cursorline = false -- Show which line your cursor is on
@@ -95,4 +104,7 @@ vim.opt.conceallevel = 1 -- added this for obsidian.nvim formatting concealment 
 
 vim.opt.colorcolumn = '80'
 
+-- vim.g.loaded_netrw = 0
+--
+-- vim.g.loaded_netrwPlugin = 0
 -- vim: ts=2 sts=2 sw=2 et

@@ -75,5 +75,14 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', '<leader>sa', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = '[S]ubstitute [A]ll of this word globally' })
 
 -- Open netrw file explorer (The default for vim)
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv', function()
+  local dir = vim.fn.expand '%:p:h'
+  vim.cmd('e ' .. dir)
+end, { desc = 'Open netrw in current file directory' })
+
+-- NOTE: some useful default keymaps I didnt know
+-- in insert mode you can do C-f on an empty line and it automatically starts editing at correct indentation
+-- Alternatively, before going into insert mode just do 'cc' OR 'S' and it'll start editing at correct indentation
+-- this keymaps tries to make this the default when going into insert mode
+
 -- vim: ts=2 sts=2 sw=2 et
