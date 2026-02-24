@@ -74,11 +74,11 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 -- Starts to global replace whatever word cursor is on. <leader>sa
 vim.keymap.set('n', '<leader>sa', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = '[S]ubstitute [A]ll of this word globally' })
 
--- Open netrw file explorer (The default for vim)
-vim.keymap.set('n', '<leader>pv', function()
-  local dir = vim.fn.expand '%:p:h'
-  vim.cmd('e ' .. dir)
-end, { desc = 'Open netrw in current file directory' })
+-- -- Open netrw file explorer (The default for vim)
+-- vim.keymap.set('n', '<leader>pv', function()
+--   local dir = vim.fn.expand '%:p:h'
+--   vim.cmd('e ' .. dir)
+-- end, { desc = 'Open netrw in current file directory' })
 
 -- NOTE: some useful default keymaps I didnt know
 -- in insert mode you can do C-f on an empty line and it automatically starts editing at correct indentation

@@ -51,7 +51,6 @@ return {
       }
     end,
   },
-
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -97,20 +96,21 @@ return {
     name = 'rose-pine',
     config = function()
       require('rose-pine').setup {
-        disable_background = true, -- This makes the background color gray like primes
+        -- disable_background = true, -- This makes the background color gray like primes
         disable_float_background = true,
         styles = {
           italic = false,
         },
         -- https://github.com/rose-pine/neovim/blob/main/lua/rose-pine.lua
         -- ^ to see rose-pine settings that you can edit
-        highlight_groups = {
-          ColorColumn = { bg = '#32302f' },
-          CursorLine = { bg = '#32302f' },
-          CursorColumn = { bg = '#32302f' },
-          StatusLine = { bg = '#32302f' }, -- I dont think these 2 status line things actually do anything
-          StatusLineNC = { bg = '#32302f' },
-        },
+        -- custom colors for
+        -- highlight_groups = {
+        --   ColorColumn = { bg = '#32302f' },
+        --   CursorLine = { bg = '#32302f' },
+        --   CursorColumn = { bg = '#32302f' },
+        --   StatusLine = { bg = '#32302f' }, -- I dont think these 2 status line things actually do anything
+        --   StatusLineNC = { bg = '#32302f' },
+        -- },
       }
     end,
   },
@@ -130,23 +130,67 @@ return {
   {
     'rebelot/kanagawa.nvim',
   },
+  -- {
+  --   'neanias/everforest-nvim',
+  --   version = false,
+  --   lazy = false,
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   -- Optional; default configuration will be used if setup isn't called.
+  --   config = function()
+  --     require('everforest').setup {
+  --       -- Your config
+  --       background = 'medium',
+  --       transparent_background_level = 0,
+  --       italics = true,
+  --       disable_italic_comments = false,
+  --       on_highlights = function(hl, _)
+  --         hl['@string.special.symbol.ruby'] = { link = '@field' }
+  --       end,
+  --     }
+  --   end,
+  -- },
   {
-    'neanias/everforest-nvim',
-    version = false,
+    'sainnhe/everforest',
     lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    -- Optional; default configuration will be used if setup isn't called.
+    priority = 1000,
     config = function()
-      require('everforest').setup {
-        -- Your config
-        background = 'medium',
-        transparent_background_level = 0,
-        italics = true,
-        disable_italic_comments = false,
-        on_highlights = function(hl, _)
-          hl['@string.special.symbol.ruby'] = { link = '@field' }
-        end,
+      if vim.fn.has 'termguicolors' == 1 then
+        vim.opt.termguicolors = true
+      end
+
+      vim.opt.background = 'dark' -- light/dark/medium themes
+
+      vim.g.everforest_background = 'medium' -- How white/dark the background color intensity is
+      vim.g.everforest_better_performance = 1
+      vim.g.everforest_enable_italic = true
+
+      vim.g.lightline = { colorscheme = 'everforest' }
+
+      vim.cmd.colorscheme 'everforest'
+    end,
+  },
+  {
+    'vague2k/vague.nvim',
+    config = function()
+      -- NOTE: you do not need to call setup if you don't want to.
+      require('vague').setup {
+        -- optional configuration here
       }
     end,
+  },
+
+  { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
+
+  {
+    'L-Colombo/oldschool.nvim',
+    config = true,
+    -- to ovverride palette colors:
+    -- opts = { <color> = "<hex value>"}
+  },
+
+  {
+    'scottmckendry/cyberdream.nvim',
+    lazy = false,
+    priority = 1000,
   },
 }

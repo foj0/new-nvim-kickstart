@@ -11,10 +11,11 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal right<CR>', desc = 'NeoTree reveal right', silent = true },
   },
   opts = {
     filesystem = {
+      hijack_netrw_behavior = 'disabled', -- prevent it from opening automatically.
       window = {
         mappings = {
           ['\\'] = 'close_window',

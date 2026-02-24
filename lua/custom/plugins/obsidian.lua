@@ -41,9 +41,10 @@ return {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
+    -- The following fixed this plugin not working.
+    -- cd ~/.local/share/nvim/lazy/markdown-preview.nvim
+    -- npm install
+    build = 'cd app && yarn install',
     config = function()
       vim.cmd [[do FileType]]
       vim.cmd [[

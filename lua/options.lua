@@ -104,6 +104,21 @@ vim.opt.conceallevel = 1 -- added this for obsidian.nvim formatting concealment 
 
 vim.opt.colorcolumn = '80'
 
+-- vim.opt.guicursor = {
+--   -- 'n-v-c:block-Cursor', -- Normal, Visual, Command: block using Cursor highlight
+--   'i-ci:blinkon0-block-InsertCursor', -- Insert: block using InsertCursor highlight
+--   'r-cr:blinkon0-block-ReplaceCursor', -- Replace mode: optional styling
+-- }
+--
+-- -- -- Normal mode cursor (default or theme-based, no change)
+-- -- vim.api.nvim_set_hl(0, 'Cursor', {})
+--
+-- -- Insert mode cursor: orange-yellow block
+-- vim.api.nvim_set_hl(0, 'InsertCursor', { bg = '#333333', fg = '#333333' })
+--
+-- -- Optional: replace mode
+-- vim.api.nvim_set_hl(0, 'ReplaceCursor', { bg = '#ff005f', fg = '#ffffff' })
+
 -- vim.g.loaded_netrw = 0
 --
 -- vim.g.loaded_netrwPlugin = 0

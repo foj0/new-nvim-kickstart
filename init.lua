@@ -106,7 +106,7 @@ require 'lazy-bootstrap'
 require 'lazy-plugins'
 
 -- Set default colorscheme on load
-ColorMyPencils 'rose-pine-moon'
+ColorMyPencils 'gruvbox-material'
 
 -- NOTE: Look at tjdevries neovim config on his github for some more ideas.
 
